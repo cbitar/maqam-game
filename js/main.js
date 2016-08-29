@@ -32,36 +32,6 @@ var startGame = function() {
   var correct = 0;
 };
 
-
-function generateNumber() {
-  var randomNumber = Math.floor(Math.random() * maqam.length);
-  var nameScale = maqam[randomNumber];
-  console.log(nameScale);
-  $('#message').html(nameScale);
-};
-
-
-$('#play').on('click', generateNumber);
-
-function checkScale() {
-  // debugger;
-  var correct = 0;
-  var incorrect = 0;
-  if(maqam[i] === maqam[0]){
-   return bayyati;
-   console.log(bayyati);
-   } else {
-    console.log("sorry try again");
-   }
-  //   return "Congrats", correct++;
-  // } else {
-  //   incorrect++;
-  // checkScale();
- };
-
-// $('#box0').on('click', function(){
-
-// });
 document.querySelector("#box0").addEventListener("click", checkScale);
 document.querySelector("#box1").addEventListener("click", checkScale);
 document.querySelector("#box2").addEventListener("click", checkScale);
@@ -78,6 +48,38 @@ document.querySelector("#box12").addEventListener("click", checkScale);
 document.querySelector("#box13").addEventListener("click", checkScale);
 document.querySelector("#box14").addEventListener("click", checkScale);
 document.querySelector("#box15").addEventListener("click", checkScale);
+
+function generateNumber() {
+  var randomNumber = Math.floor(Math.random() * maqam.length);
+  var nameScale = maqam[randomNumber];
+  console.log(nameScale);
+  $('#message').html(nameScale);
+  function checkScale() {
+  // debugger;
+  var correct = 0;
+  var incorrect = 0;
+  if(maqam[i] === randomNumber){
+   // return bayyati;
+   // console.log(bayyati);
+   // } else {
+    console.log("sorry try again");
+   };
+};
+
+
+$('#play').on('click', generateNumber);
+
+  //   return "Congrats", correct++;
+  // } else {
+  //   incorrect++;
+  // checkScale();
+ };
+
+ // map and match method??? ask phil or jim
+
+// $('#box0').on('click', function(){
+
+// });
 
 
 
