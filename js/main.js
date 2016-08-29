@@ -1,7 +1,70 @@
-var maqam = ["Bayyati","Nahawand","Saba","Huzam",
-             "Hijaz","Ajam","Nakriz","Bastanikar",
-             "Rast","Sikah","Shawq Afza","Iraq",
-             "Lami","Kurd","Hijaz Kar","Nawa Athar"];
+var maqam = [
+  {
+    name: "Bayyati",
+    file: 'audio/filename.mp3',
+    pointValue: 5
+  }, {
+    name: "Nahawand",
+    file: '',
+    pointValue: 5
+  }, {
+    name:"Saba",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Huzam",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Hijaz",
+    file: '',
+    pointValue: 5,
+  }, {
+    name: "Ajam",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Bastanikar",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Nakriz",
+    file: '',
+    pointValue: 5,
+  }, {
+    name: "Iraq",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Sikah",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Rast",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Shawq Afza",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Lami",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Kurd",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Hijaz Kar",
+    file: '',
+    pointValue: 5
+  }, {
+    name: "Nawa Athar",
+    file: '',
+    pointValue: 5
+  }
+];
 var won = false;
 var player = "Maqam Master";
 var i = maqam;
@@ -32,22 +95,13 @@ var startGame = function() {
   var correct = 0;
 };
 
-document.querySelector("#box0").addEventListener("click", checkScale);
-document.querySelector("#box1").addEventListener("click", checkScale);
-document.querySelector("#box2").addEventListener("click", checkScale);
-document.querySelector("#box3").addEventListener("click", checkScale);
-document.querySelector("#box4").addEventListener("click", checkScale);
-document.querySelector("#box5").addEventListener("click", checkScale);
-document.querySelector("#box6").addEventListener("click", checkScale);
-document.querySelector("#box7").addEventListener("click", checkScale);
-document.querySelector("#box8").addEventListener("click", checkScale);
-document.querySelector("#box9").addEventListener("click", checkScale);
-document.querySelector("#box10").addEventListener("click", checkScale);
-document.querySelector("#box11").addEventListener("click", checkScale);
-document.querySelector("#box12").addEventListener("click", checkScale);
-document.querySelector("#box13").addEventListener("click", checkScale);
-document.querySelector("#box14").addEventListener("click", checkScale);
-document.querySelector("#box15").addEventListener("click", checkScale);
+
+
+$('#board').on('click', '.box', function(evt){
+  var idx = parseInt(this.id.substr(3));
+
+  console.log(maqam[idx].name)
+});
 
 function generateNumber() {
   var randomNumber = Math.floor(Math.random() * maqam.length);
