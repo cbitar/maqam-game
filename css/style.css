@@ -1,0 +1,96 @@
+@import 'https://fonts.googleapis.com/css?family=Londrina+Outline';
+@import 'https://fonts.googleapis.com/css?family=Titillium+Web';
+body {
+  background-image: url("http://www.dorisleslieblau.com/images/rugs/antique-rug-northwest-persian-bakshaish-heriz-heriz-red-botanical-bb2956-11x9-d2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+header {
+  float: left;
+  width: 100%;
+  background-color: black;
+  margin-top:20px;
+}
+
+.container{
+    width: 50%;
+    padding-left:385px;
+    /*margin-bottom: 120px;*/
+}
+
+.row {
+   width: auto;
+   display: inline-block;
+
+}
+
+
+#playScale {
+  padding: 20px;
+  background-color: #aa3520;
+  border: 1px solid black;
+  border-radius: 14px;
+  width: 27%;
+}
+
+#corscore {
+    width: 85px;
+    height: 85px;
+    border: 1px solid black;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+    background-color: #aa3520;
+    border: 1px solid gray;
+    border-radius: 70px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: Verdana;
+    float:right;
+}
+
+#incorscore {
+    width: 85px;
+    height: 85px;
+    border: 1px solid black;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+    background-color: #aa3520;
+    border: 1px solid gray;
+    border-radius: 70px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: Verdana;
+    float: right;
+    margin-left: 600px;
+}
+
+.box {
+    width: 100px;
+    height: 35px;
+    border: 1px solid black;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+    background-color: transparent;
+    border: 1px solid gray;
+    /*border-radius: 70px;*/
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+
+audio{
+  /*display:none;*/
+}
+
+.box:hover {
+    background-color: #982614;
+    color: #B5BDFF;
+}
