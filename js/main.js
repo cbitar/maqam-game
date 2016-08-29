@@ -1,131 +1,118 @@
 var maqam = [
   {
     name: "Bayyati",
-    file: 'sharonjones.mp3',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Nahawand",
-    file: 'nazgul_screech.mp3',
+    file: 'audio/nazgul_screech.mp3',
     pointValue: 5
   }, {
     name:"Saba",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Huzam",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Hijaz",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5,
   }, {
     name: "Ajam",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Bastanikar",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Nakriz",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5,
   }, {
     name: "Iraq",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Sikah",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Rast",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Shawq Afza",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Lami",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Kurd",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Hijaz Kar",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Nawa Athar",
-    file: '',
+    file: 'audio/sharonjones.mp3',
     pointValue: 5
   }
 ];
-var won = false;
+
 var player = "Maqam Master";
-var attempt = 0;
-var counter = 0;
-var i = 0;
-var bayyati = maqam[0];
-var nahawand = maqam[1];
-var saba = maqam[2];
-var huzam = maqam[3];
-var hijaz = maqam[4];
-var ajam = maqam[5];
-var nakriz = maqam[6];
-var bastanikar = maqam[7];
-var rast = maqam[8];
-var sikah = maqam[9];
-var shawqAfza = maqam[10];
-var iraq = maqam[11];
-var lami = maqam[12];
-var kurd = maqam[13];
-var hijazKar = maqam[14];
-var nawaAthar = maqam[15];
-
-var randomNumber = Math.floor(Math.random() * maqam.length);
- var nameScale = maqam[randomNumber];
+var attempt;
+var counter;
+var randomNumber;
 
 
+$('#restart').on('click', startGame);
 
-var startGame = function() {
-  won = false;
-  player = "Maqam Master"
-};
+$('#play').on('click', play);
 
 // choose a box and check to see if correct, also add to attempt and counter;
-
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
   attempt++;
-  $('#attempts').html(attempt)
-  console.log(maqam[idx].name)
-  if(maqam[idx].name === nameScale.name) {
-    counter++;
-    console.log("Nice");
-    $('#corscore').html(counter)
-  } else {
-    console.log("try again");
-  }
-
+  if (idx === randomNumber) counter++;
+  render();
 });
 
-// generates random maqam(scale)
-
-
-function generateNumber() {
-   randomNumber = Math.floor(Math.random() * maqam.length);
-   nameScale = maqam[randomNumber];
-  console.log(nameScale.name);
-  $('#message').html(nameScale.name);
+function startGame() {
+  counter = 0;
+  attempt = 0;
+  render();
 };
 
+function render() {
+  $('#attempts').html(attempt);
+  $('#corscore').html(counter);
+  //  code for win logic when counter reaches certain number.
+  if(counter > 5) {
+    $("#message").html("Wow you're doing great!")
+  } else {
+    $('#message').html("Let's go " + player);
+  }
+}
 
-$('#play').on('click', generateNumber);
+// generates random maqam(scale)
+function generateNumber() {
+  randomNumber = Math.floor(Math.random() * maqam.length);
+};
+
+function play() {
+  generateNumber();
+  //play audio
+  $('#playScale').attr('src', maqam[randomNumber].file);
+  $('#playScale')[0].play();
+}
+
 
   // // function checkScale() {
   // // if (bayyati !== nameScale.name){
@@ -146,9 +133,9 @@ $('#play').on('click', generateNumber);
 
 
  // restart game
- $('#restart').on('click', function restartGame() {
-  startGame();
- });
+ $('#restart').on('click', startGame);
+
+ startGame();
 
 // while(????? !== )
 
