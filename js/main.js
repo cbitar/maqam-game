@@ -1,7 +1,7 @@
 var maqam = [
   {
     name: "Bayyati",
-    file: 'audio/filename.mp3',
+    file: 'sharonjones.mp3',
     pointValue: 5
   }, {
     name: "Nahawand",
@@ -67,7 +67,9 @@ var maqam = [
 ];
 var won = false;
 var player = "Maqam Master";
-var i = maqam;
+var attempt = 0;
+var counter = 0;
+var i = 0;
 var bayyati = maqam[0];
 var nahawand = maqam[1];
 var saba = maqam[2];
@@ -85,71 +87,73 @@ var kurd = maqam[13];
 var hijazKar = maqam[14];
 var nawaAthar = maqam[15];
 
+var randomNumber = Math.floor(Math.random() * maqam.length);
+ var nameScale = maqam[randomNumber];
+
 
 // var scaleSounds = document.createElement("Audio");
 
 var startGame = function() {
   won = false;
   player = "Maqam Master"
-  var incorrect = 0;
-  var correct = 0;
 };
 
 
 
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
-
+  attempt++;
+  $('#attempts').html(attempt)
   console.log(maqam[idx].name)
+  // if(maqam[idx].name !== nameScale.name) {
+  //   console.log("try again!!");
+  //  };
+  if(maqam[idx].name === nameScale.name) {
+    counter++;
+    console.log("Nice");
+    $('#corscore').html(counter)
+  } else {
+    console.log("try again");
+  }
+
 });
 
 function generateNumber() {
-  var randomNumber = Math.floor(Math.random() * maqam.length);
-  var nameScale = maqam[randomNumber];
-  console.log(nameScale);
-  $('#message').html(nameScale);
-  function checkScale() {
-  // debugger;
-  var correct = 0;
-  var incorrect = 0;
-  if(maqam[i] === randomNumber){
-   // return bayyati;
-   // console.log(bayyati);
-   // } else {
-    console.log("sorry try again");
-   };
+   randomNumber = Math.floor(Math.random() * maqam.length);
+   nameScale = maqam[randomNumber];
+  console.log(nameScale.name);
+  $('#message').html(nameScale.name);
 };
 
 
 $('#play').on('click', generateNumber);
 
+  function checkScale() {
+  if (bayyati !== nameScale.name){
+    counter +=1;
+   // return bayyati;
+   // console.log(bayyati);
+   // } else {
+    console.log(bayyati);
+   };
   //   return "Congrats", correct++;
   // } else {
   //   incorrect++;
   // checkScale();
  };
 
+ // need a function or way to replay same scale
+
+
+
+ // restart game
+ $('#restart').on('click', function restartGame() {
+  startGame();
+ });
+
+// while(????? !== )
+
  // map and match method??? ask phil or jim
 
-// $('#box0').on('click', function(){
-
-// });
-
-
-
-
-
-
-// function shuffleMaqamat(scales) {
-//     for (var i = scales.length - 1; i > 0; i--) {
-//         var j = Math.floor(Math.random() * (i + 1));
-//         var temp = scales[i];
-//         scales[i] = scales[j];
-//         scales[j] = temp;
-//     }
-//     return scales;
-// }
-
-// var $('hi') = $("<h1>");
 
 

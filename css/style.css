@@ -1,7 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Londrina+Outline';
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web';
+@import 'https://fonts.googleapis.com/css?family=Merienda+One';
 body {
-  background-image: url("http://www.dorisleslieblau.com/images/rugs/antique-rug-northwest-persian-bakshaish-heriz-heriz-red-botanical-bb2956-11x9-d2.jpg");
+  color: white;
+  background-image: url("http://i49.photobucket.com/albums/f254/Bulerias81/abdonahat.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Titillium Web', sans-serif;
@@ -11,19 +13,43 @@ header {
   float: left;
   width: 100%;
   /*background-color: black;*/
-  margin-top:20px;
+  margin-top:10px;
+  text-align: center;
 }
 
-.container{
-    width: 50%;
-    padding-left:385px;
+h1 {
+  font-family: 'Merienda One', cursive;
+  text-align: left;
+}
+
+h2 {
+  text-align:left;
+  margin-top: -27px;
+}
+
+#board {
+/*    width: 80%;
+    padding-left:350px;
     /*margin-bottom: 120px;*/
 }
 
 .row {
-   width: auto;
+   width: 50%;
    display: inline-block;
+   padding-left: 320px;
 
+}
+
+#play, #restart, #replay {
+  border: 1px solid #aea599;
+  border-radius: 20px;
+  background-color: #21101b;
+  padding: 20px;
+  margin-left: 209px;
+  margin-bottom: 40px;
+  display: inline;
+  color: white;
+  /*font-size: 20px;*/
 }
 
 
@@ -43,16 +69,17 @@ header {
     display: inline-block;
     text-align: center;
     padding-top: 20px;
-    background-color: #aa3520;
+    background-color: #21101b;
     border: 1px solid gray;
-    border-radius: 70px;
+    border-radius: 20px;
     margin-bottom: 10px;
     font-size: 20px;
     font-family: Verdana;
     float:right;
+    margin-top: -100px;
 }
 
-#incorscore {
+#attempts {
     width: 85px;
     height: 85px;
     border: 1px solid black;
@@ -60,37 +87,39 @@ header {
     display: inline-block;
     text-align: center;
     padding-top: 20px;
-    background-color: #aa3520;
+    background-color: #21101b;
     border: 1px solid gray;
-    border-radius: 70px;
+    border-radius: 20px;
     margin-bottom: 10px;
     font-size: 20px;
     font-family: Verdana;
     float: right;
     margin-left: 600px;
+    margin-top: -100px;
 }
 
 .box {
     width: 100px;
     height: 35px;
-    border: 1px solid black;
+    border: 1px solid #aea599;
     color: white;
     display: inline-block;
     text-align: center;
     padding-top: 20px;
-    background-color: transparent;
+    background-color: #21101b;
     border: 1px solid gray;
-    /*border-radius: 70px;*/
+    border-radius: 20px;
     margin-bottom: 10px;
     font-size: 20px;
 
 }
 
-audio{
-  /*display:none;*/
+audio {
+  display:none;
 }
 
 .box:hover {
-    background-color: #982614;
-    color: #B5BDFF;
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
 }
