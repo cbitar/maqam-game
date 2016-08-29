@@ -5,7 +5,7 @@ var maqam = [
     pointValue: 5
   }, {
     name: "Nahawand",
-    file: '',
+    file: 'nazgul_screech.mp3',
     pointValue: 5
   }, {
     name:"Saba",
@@ -91,23 +91,19 @@ var randomNumber = Math.floor(Math.random() * maqam.length);
  var nameScale = maqam[randomNumber];
 
 
-// var scaleSounds = document.createElement("Audio");
 
 var startGame = function() {
   won = false;
   player = "Maqam Master"
 };
 
-
+// choose a box and check to see if correct, also add to attempt and counter;
 
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
   attempt++;
   $('#attempts').html(attempt)
   console.log(maqam[idx].name)
-  // if(maqam[idx].name !== nameScale.name) {
-  //   console.log("try again!!");
-  //  };
   if(maqam[idx].name === nameScale.name) {
     counter++;
     console.log("Nice");
@@ -117,6 +113,9 @@ $('#board').on('click', '.box', function(evt){
   }
 
 });
+
+// generates random maqam(scale)
+
 
 function generateNumber() {
    randomNumber = Math.floor(Math.random() * maqam.length);
@@ -128,19 +127,19 @@ function generateNumber() {
 
 $('#play').on('click', generateNumber);
 
-  function checkScale() {
-  if (bayyati !== nameScale.name){
-    counter +=1;
-   // return bayyati;
-   // console.log(bayyati);
-   // } else {
-    console.log(bayyati);
-   };
+  // // function checkScale() {
+  // // if (bayyati !== nameScale.name){
+  // //   counter +=1;
+  // //  // return bayyati;
+  // //  // console.log(bayyati);
+  // //  // } else {
+  // //   console.log(bayyati);
+  //  };
   //   return "Congrats", correct++;
   // } else {
   //   incorrect++;
   // checkScale();
- };
+ // };
 
  // need a function or way to replay same scale
 
