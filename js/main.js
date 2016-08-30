@@ -70,6 +70,7 @@ var player = "Maqam Master";
 var attempt;
 var counter;
 var randomNumber;
+var answered = false;
 
 
 $('#restart').on('click', startGame);
@@ -79,11 +80,14 @@ $('#play').on('click', play);
 // choose a box and check to see if correct, also add to attempt and counter;
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
-  attempt++;
-  if (idx === randomNumber) {
+  if (!answered) attempt++;
+  if (idx === randomNumber && !answered) {
+    answered = true;
+    $('#message').html("That's Correct!");
     counter++;
     $('#play').html("Play");
-    $('#message').html("That's Correct!");
+  } else if (answered) {
+    $('#message').html("You've already answered!");
   } else {
   $('#message').html("Oops! Guess Again!");
   }
@@ -105,14 +109,20 @@ function render() {
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
     $("#message").html("Wow you're doing great!")
-  } else {
+  } if (counter > 10) {
+    $("#message").html("You are a " + player);
+  }
+  else {
     $('#message').html("Let's go " + player);
   }
 }
 
+
+
 // generates random maqam(scale)
 function generateNumber() {
   randomNumber = Math.floor(Math.random() * maqam.length);
+  answered = false;
 };
 
 function play() {
@@ -149,8 +159,7 @@ function play() {
 
  // restart game
  $('#restart').on('click', startGame);
-
- startGame();
+   startGame();
 
 // while(????? !== )
 
