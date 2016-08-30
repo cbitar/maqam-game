@@ -80,7 +80,11 @@ $('#play').on('click', play);
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
   attempt++;
-  if (idx === randomNumber) counter++;
+  if (idx === randomNumber) {
+  counter++, $('#play').html("Play"), $('#message').html("That's Correct!");
+  } else {
+  $('#message').html("Oops! Guess Again!");
+  }
   render();
 });
 
@@ -91,8 +95,12 @@ function startGame() {
 };
 
 function render() {
+  // var pending = false
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
+  $
+
+
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
     $("#message").html("Wow you're doing great!")
@@ -107,10 +115,16 @@ function generateNumber() {
 };
 
 function play() {
-  generateNumber();
-  //play audio
-  $('#playScale').attr('src', maqam[randomNumber].file);
-  $('#playScale')[0].play();
+  if($('#play').html() === true) {
+    $('#playScale').attr('src', maqam[randomNumber].file);
+    $('#playScale')[0].play();
+  } else {
+    generateNumber();
+    //play audio
+    $('#playScale').attr('src', maqam[randomNumber].file);
+    $('#playScale')[0].play();
+    $('#play').toggleClass('.replay').html("Replay");
+  }
 }
 
 
