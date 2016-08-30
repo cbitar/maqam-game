@@ -135,9 +135,13 @@ function play() {
     $('#playScale').attr('src', maqam[randomNumber].file);
     $('#playScale')[0].play();
     $('#play').toggleClass('.replay').html("Replay");
+    // $('.box').toggleClass('.boxy');
   }
 }
 
+ // restart game
+ $('#restart').on('click', startGame);
+   startGame();
 
   // // function checkScale() {
   // // if (bayyati !== nameScale.name){
@@ -157,13 +161,9 @@ function play() {
 
 
 
- // restart game
- $('#restart').on('click', startGame);
-   startGame();
 
 // while(????? !== )
 
- // map and match method??? ask phil or jim
 
 
 

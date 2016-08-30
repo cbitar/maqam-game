@@ -27,6 +27,44 @@ technologies used:
 
  1. Still working to create a visual element that animates the choosing process.
 
+ Spelling of the tetrachords of Maqamat:
+
+Bayyati: [Bayyati + Nahawand]
+          [D E/b F G + A Bb C D]
+
+Nahawand: [Nahawawnd + Kurd]
+           [C D Eb F + G Ab Bb C] 
+
+Saba: [Saba + Hijaz]
+    [D E/b F Gb + A Bb C# D]
+
+Huzam: [Sikah + Hijaz??]
+    [E/b F G + Ab B C D E/b] 
+
+Hijaz: [Hijaz + Nahawand]
+      [D Eb F# G + A Bb C D]
+
+Ajam: [Ajam + Ajam??]
+     [Bb C D Eb + F G A Bb]
+
+Nakriz: [Nakriz?? + Nahawand]
+       [C D Eb F# + G A Bb C]
+
+Bastanikar: [Sikah + Saba]
+          [B/b C D + E/b F Gb A Bb]
+
+Rast: [Rast + Rast]
+ [C D E/b F + G A B/b C ]
+
+Suznak: [Rast + Hijaz]
+    [C D E/b F + G Ab B C]
+
+    
+
+
+
+
+
 
 
 
