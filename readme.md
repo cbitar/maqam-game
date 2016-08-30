@@ -1,4 +1,4 @@
-*Guess the Maqam*
+*Maqam Match*
 
 
 Number of players: one
@@ -58,6 +58,24 @@ Rast: [Rast + Rast]
 
 Suznak: [Rast + Hijaz]
     [C D E/b F + G Ab B C]
+
+Shawq Afza: [Ajam + Hijaz]
+       [Bb C D Eb + F Gb A Bb]
+
+Iraq: [Sikah + Bayyati]
+    [B/b C D + E/b F G A Bb]
+
+Kurd: [Kurd + Nahawand]
+  [D Eb F G + A Bb C D]
+
+Lami: [Kurd + Kurd]
+     [D Eb F G + Ab B C D]
+
+Ushaq Masri: [Nahawawnd + Bayyati]
+           [C D Eb F + G A/b B C]
+
+Nawa Athar: [Nawa Athar+ Hijaz]
+            [C D Eb F# + G Ab B C]
 
     
 
