@@ -1,27 +1,27 @@
 var maqam = [
   {
     name: "Bayyati",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/bayyati_mg.m4a',
     pointValue: 5
   }, {
     name: "Nahawand",
-    file: 'audio/nazgul_screech.mp3',
+    file: 'audio/nahawand_mg.m4a',
     pointValue: 5
   }, {
     name:"Saba",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/saba_mg.m4a',
     pointValue: 5
   }, {
     name: "Huzam",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/huzam_mg.m4a',
     pointValue: 5
   }, {
     name: "Hijaz",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/hijaz_mg.m4a',
     pointValue: 5,
   }, {
     name: "Ajam",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/ajam_mg.m4a',
     pointValue: 5
   }, {
     name: "Bastanikar",
@@ -29,14 +29,14 @@ var maqam = [
     pointValue: 5
   }, {
     name: "Nakriz",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/nakriz_mg.m4a',
     pointValue: 5,
   }, {
     name: "Iraq",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/nazgul_screech.mp3',
     pointValue: 5
   }, {
-    name: "Sikah",
+    name: "Suznak",
     file: 'audio/sharonjones.mp3',
     pointValue: 5
   }, {
@@ -45,23 +45,23 @@ var maqam = [
     pointValue: 5
   }, {
     name: "Shawq Afza",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/nazgul_screech.mp3',
     pointValue: 5
   }, {
     name: "Lami",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/nazgul_screech.mp3',
     pointValue: 5
   }, {
     name: "Kurd",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/nazgul_screech.mp3',
     pointValue: 5
   }, {
-    name: "Hijaz Kar",
-    file: 'audio/sharonjones.mp3',
+    name: "Ushaq Masri",
+    file: 'audio/nazgul_screech.mp3',
     pointValue: 5
   }, {
     name: "Nawa Athar",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/nawa_athar_mg.m4a',
     pointValue: 5
   }
 ];
