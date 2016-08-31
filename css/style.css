@@ -189,7 +189,7 @@ audio {
 }
 @media only screen and (max-width: 1235px) {
   .row{
-    padding-left: 377px;
+    margin-left: 377px;
   }
    #play, #restart {
    margin-left: 348px;
@@ -197,17 +197,17 @@ audio {
 }
 @media only screen and(max-width: 1100px) {
   .row {
-   padding-left: 300px;
+   margin-left: 300px;
    background-color: red;
   }
  #play, #restart {
-   padding-left: 300px;
+   margin-left: 300px;
  }
 }
 @media only screen and (max-width: 800px) {
   .row {
     width: 77%;
-    padding-left: 111px;
+    margin-left: 111px;
   }
   #play, #restart {
     margin-left: 203px;
