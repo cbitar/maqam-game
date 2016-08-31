@@ -188,8 +188,8 @@ audio {
   background-color: red;
 }
 @media only screen and (max-width: 1235px) {
-  .row{
-    margin-left: 377px;
+  .row {
+    margin-left: -22px;
   }
    #play, #restart {
    margin-left: 348px;
@@ -207,7 +207,7 @@ audio {
 @media only screen and (max-width: 800px) {
   .row {
     width: 77%;
-    margin-left: 111px;
+    margin-left: -288px;
   }
   #play, #restart {
     margin-left: 203px;
