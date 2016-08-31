@@ -70,7 +70,11 @@ var player = "Maqam Master";
 var attempt;
 var counter;
 var randomNumber;
-var percentageRight = (counter/attempt * 100);
+var percentageRight;
+
+
+
+
 
 $('#restart').on('click', startGame);
 
@@ -80,11 +84,15 @@ $('#play').on('click', play);
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
   attempt++;
+  $('#percent').html(percentageRight + '%');
+  percentageRight = (Math.floor((counter/attempt) * 100));
   $(this).addClass('selected');
   if (idx === randomNumber) {
-    $('.box').removeClass('selected');
     $('#message').html("That's Correct!");
+    $('#percent').html(percentageRight + '%');
+    $('.box').removeClass('selected');
     counter++;
+    percentageRight = (Math.floor((counter/attempt) * 100));
     $('#play').html("Play");
   }
   // } else if {
@@ -99,6 +107,7 @@ $('#board').on('click', '.box', function(evt){
 function startGame() {
   counter = 0;
   attempt = 0;
+  percentageRight = 0 + '%';
    $('#play').html("Play");
    $('.box').removeClass('selected');
   render();
@@ -111,6 +120,7 @@ function render() {
 
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
+    console.log("poop")
     $("#message").html("Wow you're doing great!")
   } else if (counter > 10) {
     $("#message").html("You are a " + player);
