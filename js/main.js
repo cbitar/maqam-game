@@ -25,7 +25,7 @@ var maqam = [
     pointValue: 5
   }, {
     name: "Bastanikar",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/bastanikar_mg.m4a',
     pointValue: 5
   }, {
     name: "Nakriz",
@@ -33,15 +33,15 @@ var maqam = [
     pointValue: 5,
   }, {
     name: "Iraq",
-    file: 'audio/nazgul_screech.mp3',
+    file: 'audio/iraq_mg.m4a',
     pointValue: 5
   }, {
     name: "Suznak",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/suznak_mg.m4a',
     pointValue: 5
   }, {
     name: "Rast",
-    file: 'audio/sharonjones.mp3',
+    file: 'audio/rast_mg.m4a',
     pointValue: 5
   }, {
     name: "Shawq Afza",
@@ -49,15 +49,15 @@ var maqam = [
     pointValue: 5
   }, {
     name: "Lami",
-    file: 'audio/nazgul_screech.mp3',
+    file: 'audio/lami_mg.m4a',
     pointValue: 5
   }, {
     name: "Kurd",
-    file: 'audio/nazgul_screech.mp3',
+    file: 'audio/kurd_mg.m4a',
     pointValue: 5
   }, {
     name: "Ushaq Masri",
-    file: 'audio/nazgul_screech.mp3',
+    file: 'audio/ushaq_masri_mg.m4a',
     pointValue: 5
   }, {
     name: "Nawa Athar",
@@ -79,10 +79,13 @@ $('#play').on('click', play);
 
 // choose a box and check to see if correct, also add to attempt and counter;
 $('#board').on('click', '.box', function(evt){
+  console.log(evt.target)
+  $(evt.target).addClass('selected')
   var idx = parseInt(this.id.substr(3));
   if (!answered) attempt++;
   if (idx === randomNumber && !answered) {
     answered = true;
+    $('.box').removeClass('selected');
     $('#message').html("That's Correct!");
     counter++;
     $('#play').html("Play");
@@ -97,6 +100,8 @@ $('#board').on('click', '.box', function(evt){
 function startGame() {
   counter = 0;
   attempt = 0;
+  $('#play').html("Play");
+  $('.box').removeClass('selected');
   render();
 };
 
@@ -104,7 +109,6 @@ function render() {
   // var pending = false
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
-
 
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
@@ -115,7 +119,7 @@ function render() {
   else {
     $('#message').html("Let's go " + player);
   }
-}
+};
 
 
 
@@ -126,6 +130,7 @@ function generateNumber() {
 };
 
 function play() {
+  startGame();
   if($('#play').html() === "Replay") {
     $('#playScale').attr('src', maqam[randomNumber].file);
     $('#playScale')[0].play();
@@ -140,9 +145,14 @@ function play() {
 }
 
  // restart game
- $('#restart').on('click', startGame);
+function restartGame() {
+  $('#restart').on('click', startGame);
    startGame();
+};
 
+
+
+// put inside function that adds and removes the class of the div
   // // function checkScale() {
   // // if (bayyati !== nameScale.name){
   // //   counter +=1;
