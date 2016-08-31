@@ -70,8 +70,7 @@ var player = "Maqam Master";
 var attempt;
 var counter;
 var randomNumber;
-var answered = false;
-
+var percentageRight = (counter/attempt * 100);
 
 $('#restart').on('click', startGame);
 
@@ -79,41 +78,41 @@ $('#play').on('click', play);
 
 // choose a box and check to see if correct, also add to attempt and counter;
 $('#board').on('click', '.box', function(evt){
-  console.log(evt.target)
-  $(evt.target).addClass('selected')
   var idx = parseInt(this.id.substr(3));
-  if (!answered) attempt++;
-  if (idx === randomNumber && !answered) {
-    answered = true;
+  attempt++;
+  $(this).addClass('selected');
+  if (idx === randomNumber) {
     $('.box').removeClass('selected');
     $('#message').html("That's Correct!");
     counter++;
     $('#play').html("Play");
-  } else if (answered) {
-    $('#message').html("You've already answered!");
-  } else {
-  $('#message').html("Oops! Guess Again!");
   }
+  // } else if {
+  //   $('#message').html("You've already answered!");
+  // } else {
+  // $('#message').html("Oops! Guess Again!");
+  // }
   render();
 });
+
 
 function startGame() {
   counter = 0;
   attempt = 0;
-  $('#play').html("Play");
-  $('.box').removeClass('selected');
+   $('#play').html("Play");
+   $('.box').removeClass('selected');
   render();
 };
 
 function render() {
-  // var pending = false
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
+  $('#percent').html(percentageRight);
 
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
     $("#message").html("Wow you're doing great!")
-  } if (counter > 10) {
+  } else if (counter > 10) {
     $("#message").html("You are a " + player);
   }
   else {
@@ -126,11 +125,9 @@ function render() {
 // generates random maqam(scale)
 function generateNumber() {
   randomNumber = Math.floor(Math.random() * maqam.length);
-  answered = false;
 };
 
 function play() {
-  startGame();
   if($('#play').html() === "Replay") {
     $('#playScale').attr('src', maqam[randomNumber].file);
     $('#playScale')[0].play();
@@ -145,10 +142,8 @@ function play() {
 }
 
  // restart game
-function restartGame() {
   $('#restart').on('click', startGame);
    startGame();
-};
 
 
 
@@ -166,14 +161,4 @@ function restartGame() {
   //   incorrect++;
   // checkScale();
  // };
-
- // need a function or way to replay same scale
-
-
-
-
-// while(????? !== )
-
-
-
 
