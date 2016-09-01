@@ -80,15 +80,16 @@ $('#play').on('click', play);
 // choose a box and check to see if correct, also add to attempt and counter;
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
-  if (!answered) attempt++;
+  if(!answered) attempt++;
   $(this).addClass('selected');
   if (idx === randomNumber && !answered) {
     answered = true;
-    percentageRight = (Math.floor((counter/attempt) * 100) + '%');
+    $('#message').html("That's Correct!");
     $('.box').removeClass('selected');
     counter++;
     $('#play').html("Play");
-  }
+  } else if(answered)
+    $('#message').html("You've already answered!");
   render();
 });
 
@@ -115,9 +116,7 @@ function startGame() {
 function render() {
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
-  $('#percent').html(percentageRight);
-   percentageRight = (Math.floor((counter/attempt) * 100) + '%');
-  //  code for win logic when counter reaches certain number.
+  if (attempt) $('#percent').html(Math.floor((counter/attempt) * 100) + '%');
   if(counter > 5) {
     $("#message").html("Wow you're doing great!")
   } else if (counter > 10) {
