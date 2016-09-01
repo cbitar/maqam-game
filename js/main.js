@@ -71,6 +71,7 @@ var attempt;
 var counter;
 var randomNumber;
 var percentageRight;
+var answered = false;
 
 $('#restart').on('click', startGame);
 
@@ -79,60 +80,58 @@ $('#play').on('click', play);
 // choose a box and check to see if correct, also add to attempt and counter;
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
-  attempt++;
+  if (!answered) attempt++;
   $(this).addClass('selected');
-  if (idx === randomNumber) {
-    $('#message').html("That's Correct!");
+  if (idx === randomNumber && !answered) {
+    answered = true;
+    percentageRight = (Math.floor((counter/attempt) * 100) + '%');
     $('.box').removeClass('selected');
     counter++;
     $('#play').html("Play");
   }
-  // } else if {
-  //   $('#message').html("You've already answered!");
-  // } else {
-  // $('#message').html("Oops! Guess Again!");
-  // }
   render();
 });
+
 
 // initiates the game
 function startGame() {
   counter = 0;
   attempt = 0;
-  percentageRight = 0 + '%';
    $('#play').html("Play");
    $('.box').removeClass('selected');
   render();
 };
 
+
+// sets a message when correct of incorrect
+// function setMessageWin() {
+// if(counter++) {
+//   $("#message").html("That's Correct!")
+// } else if (attempt++) {
+//   $("#message").html("Oops! Try Again");
+//  };
+// }
 // renders the score boared
 function render() {
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
   $('#percent').html(percentageRight);
    percentageRight = (Math.floor((counter/attempt) * 100) + '%');
-
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
-    console.log("poop")
     $("#message").html("Wow you're doing great!")
   } else if (counter > 10) {
     $("#message").html("You are a " + player);
-  }
-  else {
+  } else {
     $('#message').html("Let's go " + player);
   }
 };
 
-if(counter++) {
-  $("#message").html("That's Correct!")
-} else if (attempt++) {
-  $("#message").html("Oops! Try Again");
-};
 
 // generates random maqam(scale)
 function generateNumber() {
   randomNumber = Math.floor(Math.random() * maqam.length);
+  answered = false;
 };
 
 // plays the scale or maqam
@@ -146,7 +145,6 @@ function play() {
     $('#playScale').attr('src', maqam[randomNumber].file);
     $('#playScale')[0].play();
     $('#play').toggleClass('.replay').html("Replay");
-    // $('.box').toggleClass('.boxy');
   }
 }
 
@@ -154,20 +152,4 @@ function play() {
   $('#restart').on('click', startGame);
    startGame();
 
-
-
-// put inside function that adds and removes the class of the div
-  // // function checkScale() {
-  // // if (bayyati !== nameScale.name){
-  // //   counter +=1;
-  // //  // return bayyati;
-  // //  // console.log(bayyati);
-  // //  // } else {
-  // //   console.log(bayyati);
-  //  };
-  //   return "Congrats", correct++;
-  // } else {
-  //   incorrect++;
-  // checkScale();
- // };
 

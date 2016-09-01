@@ -3,6 +3,7 @@
 @import 'https://fonts.googleapis.com/css?family=Merienda+One';
 @import 'https://fonts.googleapis.com/css?family=Forum|Raleway';
 @import 'https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Russo+One';
+
 body {
   background-image: url("http://i49.photobucket.com/albums/f254/Bulerias81/abdonahat-1.jpg");
   background-repeat: no-repeat;
@@ -28,7 +29,7 @@ h1 {
 
 h2 {
   font-family: 'Raleway', sans-serif;
-  text-align:left;
+  text-align: left;
   margin-top: -24px;
 }
 
@@ -47,7 +48,7 @@ h2 {
 
 
 #message {
-  margin-top:-64px;
+  margin-top: -64px;
   font-size: 20px;
 }
 

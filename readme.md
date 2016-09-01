@@ -1,5 +1,7 @@
 *Maqam Match*
 
+link : https://cbitar.github.io/maqam-game/
+
 
 Number of players: one
 Timer: none
