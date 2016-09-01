@@ -45,7 +45,7 @@ var maqam = [
     pointValue: 5
   }, {
     name: "Shawq Afza",
-    file: 'audio/nazgul_screech.mp3',
+    file: 'audio/shawq_afza_mg.m4a',
     pointValue: 5
   }, {
     name: "Lami",
@@ -72,10 +72,6 @@ var counter;
 var randomNumber;
 var percentageRight;
 
-
-
-
-
 $('#restart').on('click', startGame);
 
 $('#play').on('click', play);
@@ -84,15 +80,11 @@ $('#play').on('click', play);
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
   attempt++;
-  $('#percent').html(percentageRight + '%');
-  percentageRight = (Math.floor((counter/attempt) * 100));
   $(this).addClass('selected');
   if (idx === randomNumber) {
     $('#message').html("That's Correct!");
-    $('#percent').html(percentageRight + '%');
     $('.box').removeClass('selected');
     counter++;
-    percentageRight = (Math.floor((counter/attempt) * 100));
     $('#play').html("Play");
   }
   // } else if {
@@ -103,7 +95,7 @@ $('#board').on('click', '.box', function(evt){
   render();
 });
 
-
+// initiates the game
 function startGame() {
   counter = 0;
   attempt = 0;
@@ -113,10 +105,12 @@ function startGame() {
   render();
 };
 
+// renders the score boared
 function render() {
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
   $('#percent').html(percentageRight);
+   percentageRight = (Math.floor((counter/attempt) * 100) + '%');
 
   //  code for win logic when counter reaches certain number.
   if(counter > 5) {
@@ -130,13 +124,18 @@ function render() {
   }
 };
 
-
+if(counter++) {
+  $("#message").html("That's Correct!")
+} else if (attempt++) {
+  $("#message").html("Oops! Try Again");
+};
 
 // generates random maqam(scale)
 function generateNumber() {
   randomNumber = Math.floor(Math.random() * maqam.length);
 };
 
+// plays the scale or maqam
 function play() {
   if($('#play').html() === "Replay") {
     $('#playScale').attr('src', maqam[randomNumber].file);

@@ -52,6 +52,7 @@ h2 {
 }
 
 #play, #restart, .replay {
+  display: block;
   border: 1px solid #aea599;
   border-radius: 10px;
   background-color: #21101b;
@@ -172,7 +173,9 @@ audio {
 .box:hover {
     background-color: transparent;
     color: lightblue;
-    font-weight: bolder;
+    font-weight: black;
+    text-shadow: 2px 2px #880e0e;
+    font-size: 19px
 }
 #play:hover {
   background-color: transparent;
@@ -191,7 +194,7 @@ audio {
 }
 
 .selected {
-  background-color: red;
+  background-color: #880e0e;
 }
 @media only screen and (max-width: 1254px) {
   .row {
@@ -199,7 +202,7 @@ audio {
     width: 100%;
   }
    #play, #restart {
-   margin-left: 348px;
+   margin-left: 354px;
  }
 }
 @media only screen and (max-width: 1100px) {
