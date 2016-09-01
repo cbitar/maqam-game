@@ -71,6 +71,7 @@ var attempt;
 var counter;
 var randomNumber;
 var percentageRight;
+var answered = false;
 
 $('#restart').on('click', startGame);
 
@@ -79,19 +80,16 @@ $('#play').on('click', play);
 // choose a box and check to see if correct, also add to attempt and counter;
 $('#board').on('click', '.box', function(evt){
   var idx = parseInt(this.id.substr(3));
-  attempt++;
+  if(!answered) attempt++;
   $(this).addClass('selected');
-  if (idx === randomNumber) {
+  if (idx === randomNumber && !answered) {
+    answered = true;
     $('#message').html("That's Correct!");
     $('.box').removeClass('selected');
     counter++;
     $('#play').html("Play");
-  }
-  // } else if {
-  //   $('#message').html("You've already answered!");
-  // } else {
-  // $('#message').html("Oops! Guess Again!");
-  // }
+  } else if(answered)
+    $('#message').html("You've already answered!");
   render();
 });
 
@@ -133,6 +131,7 @@ if(counter++) {
 // generates random maqam(scale)
 function generateNumber() {
   randomNumber = Math.floor(Math.random() * maqam.length);
+  answered = false;
 };
 
 // plays the scale or maqam
