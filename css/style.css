@@ -4,13 +4,24 @@
 @import 'https://fonts.googleapis.com/css?family=Forum|Raleway';
 @import 'https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Russo+One';
 
-body {
+html {
   background-image: url("http://i49.photobucket.com/albums/f254/Bulerias81/abdonahat-1.jpg");
   background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  /*background-image: url("http://i49.photobucket.com/albums/f254/Bulerias81/abdonahat-1.jpg");*/
+  background-repeat: no-repeat;
+  height: 117vh;
   background-size: cover;
   color: white;
   font-family: 'Titillium Web', sans-serif;
-  background-color: lightblue;
+  background-color: transparent;
 }
 
 header {
@@ -25,12 +36,14 @@ h1 {
   text-align: left;
   font-size: 40px;
   margin-top: 1px;
+  text-shadow: 1px 1px green;
 }
 
 h2 {
   font-family: 'Raleway', sans-serif;
   text-align: left;
   margin-top: -24px;
+  text-shadow: 1px 1px green;
 }
 
 #board {
@@ -48,21 +61,30 @@ h2 {
 
 
 #message {
-  margin-top: -64px;
-  font-size: 20px;
+  margin-top: -100px;
+  font-size: 27px;
+  /* display: inline-block; */
+  margin-left: 489px;
+  background-color: #aad062;
+  border: 1px solid #aad062;
+  border-radius: 3px;
+  float: left;
+  padding: 5px;
 }
 
 #play, #restart, .replay {
   display: block;
   border: 1px solid #aea599;
   border-radius: 10px;
-  background-color: #21101b;
+  background-color: #aad062;
   padding: 15px;
-  margin-left: 363px;
-  margin-bottom: 40px;
+  margin-left: 333px;
+  margin-bottom: 24px;
   display: inline;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
+  padding: 17px;
+  width: 10%;
 }
 
 
@@ -77,8 +99,8 @@ h2 {
 strong {
   float: right;
   font-family: 'Raleway', sans-serif;
-  font-size: 18px;
-  padding-right: 7px;
+  font-size: 20px;
+  padding-right: 9px;
 
 }
 
@@ -96,12 +118,12 @@ em {
     padding-top: 20px;
     background-color: #21101b;
     border: 1px solid gray;
-    border-radius: 20px;
+    border-radius: 3px;
     margin-bottom: 10px;
     font-size: 50px;
     font-family: Verdana;
     float:right;
-    margin-top: -50px;
+    margin-top: -85px;
     margin-left: 5px;
 }
 
@@ -115,21 +137,22 @@ em {
     padding-top: 20px;
     background-color: #21101b;
     border: 1px solid gray;
-    border-radius: 20px;
+    border-radius: 3px;
     margin-bottom: 10px;
     font-size: 50px;
     font-family: Verdana;
     float: right;
-    margin-left: 600px;
-    margin-top: -50px;
+    margin-top: -85px;
 }
 
 #percent {
-    font-size: 50px;
-    margin-right: 59px;
- /*   width: 13%;*/
+    font-size: 58px;
+    margin-right: 533px;
+    width: 10%;
     float: right;
     font-family: 'Droid Sans Mono', monospace;
+    margin-top: -77px;
+    text-shadow: 1px 1px #aad062;
 }
 
 .box {
@@ -199,48 +222,79 @@ audio {
 }
 @media only screen and (max-width: 1254px) {
   .row {
-    margin-left: -13px;
+    margin-left: -40px;
     width: 100%;
   }
    #play, #restart {
-   margin-left: 354px;
+   margin-left: 311px;
+ }
+ #message {
+  margin-left: 442px;
  }
 }
 @media only screen and (max-width: 1100px) {
  .row {
-   margin-left: -121px;
+   padding-left: 266px;
   }
  #play, #restart {
    margin-left: 283px;
  }
+  #message {
+  margin-left: 387px;
+ }
+ #percent {
+  width: 1%;
+ }
 }
 
 @media only screen and (max-width: 1000px) {
- .row{
+.row {
   padding-left: 185px;
   width: 97%;
  }
-  #play, #restart {
-   margin-left: 259px;
+#play, #restart {
+  margin-left: 170px;
+  padding: 23px;
+  width: 180px;
+  background-color: #aad062;
  }
+.box {
+  padding: 25px;
+}
+
 }
 
 @media only screen and (max-width: 950px) {
-   .row{
-  padding-left: 257px;
+   .row {
+  padding-left: 110px;
  }
   #play, #restart {
-   margin-left: 252px;
+   margin-left: 143px;
+   margin-top: 33px;
+ }
+  #message {
+  margin-left: 0px;
+  margin-top: -6px;
+  font-size: 15px;
+ }
+ #percent {
+  font-size: 58px;
+  margin-right: 310px;
+  width: 10%;
+  float: right;
+  font-family: 'Droid Sans Mono', monospace;
+  margin-top: -80px;
+  text-shadow: 1px 1px #aad062;
  }
 }
 
 @media only screen and (max-width: 800px) {
   .row {
     width: 100%;
-    margin-left: -180px;
+    margin-left: -78px;
   }
   #play, #restart {
-    margin-left: 203px;
+    margin-left: 71px;
   }
  #corscore {
     margin-left: 297px;
@@ -248,7 +302,7 @@ audio {
   #attempts {
     margin: auto;
     margin-right: -290px;
-    margin-top: -50px;
+    margin-top: -85px;
   }
  .box {
     padding-top: 22px;
@@ -260,13 +314,15 @@ audio {
     width: 100%;
    }
   #play, #restart {
-    margin-left: 30px;
+    margin-left: 124px;
   }
+  .box {
+  padding: 40px;
+ }
 }
-@media only device-width and (max-width: 375px) {
+@media only screen and (max-width: 560px) {
   .row {
     width: 100%;
-    margin-left: 100px;
   }
 }
 
