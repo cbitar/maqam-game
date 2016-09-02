@@ -172,23 +172,6 @@ em {
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
 }
-/*
-.boxy {
-    width: 110px;
-    height: 32px;
-    border: 1px solid #aea599;
-    color: white;
-    display: inline-block;
-    text-align: center;
-    padding-top: 12px;
-    background-color: red;
-    border: 1px solid gray;
-    border-radius: 10px;
-    margin-bottom: 7px;
-    font-size: 18px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bolder;
-}*/
 
 audio {
   display:none;
@@ -248,31 +231,31 @@ audio {
 }
 
 @media only screen and (max-width: 1000px) {
-.row {
+ .row {
   padding-left: 185px;
   width: 97%;
  }
-#play, #restart {
+ #play, #restart {
   margin-left: 170px;
   padding: 23px;
   width: 180px;
   background-color: #aad062;
  }
-.box {
+ .box {
   padding: 25px;
 }
 
 }
 
 @media only screen and (max-width: 950px) {
-   .row {
+ .row {
   padding-left: 110px;
  }
-  #play, #restart {
+ #play, #restart {
    margin-left: 143px;
    margin-top: 33px;
  }
-  #message {
+ #message {
   margin-left: 0px;
   margin-top: -6px;
   font-size: 15px;
@@ -289,39 +272,39 @@ audio {
 }
 
 @media only screen and (max-width: 800px) {
-  .row {
+ .row {
     width: 100%;
     margin-left: -78px;
   }
-  #play, #restart {
+ #play, #restart {
     margin-left: 71px;
   }
  #corscore {
     margin-left: 297px;
   }
-  #attempts {
+ #attempts {
     margin: auto;
     margin-right: -290px;
     margin-top: -85px;
   }
- .box {
+.box {
     padding-top: 22px;
   }
 }
 
 @media only screen and (max-width: 745px) {
-  .row {
+ .row {
     width: 100%;
    }
-  #play, #restart {
+ #play, #restart {
     margin-left: 124px;
   }
-  .box {
+ .box {
   padding: 40px;
  }
 }
 @media only screen and (max-width: 560px) {
-  .row {
+ .row {
     width: 100%;
   }
 }

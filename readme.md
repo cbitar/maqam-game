@@ -39,16 +39,16 @@ Nahawand: [Nahawawnd + Kurd]
 Saba: [Saba + Hijaz]
     [D E/b F Gb + A Bb C# D]
 
-Huzam: [Sikah + Hijaz??]
+Huzam: [Sikah + Hijaz]
     [E/b F G + Ab B C D E/b] 
 
 Hijaz: [Hijaz + Nahawand]
       [D Eb F# G + A Bb C D]
 
-Ajam: [Ajam + Ajam??]
+Ajam: [Ajam + Ajam]
      [Bb C D Eb + F G A Bb]
 
-Nakriz: [Nakriz?? + Nahawand]
+Nakriz: [Nakriz + Nahawand]
        [C D Eb F# + G A Bb C]
 
 Bastanikar: [Sikah + Saba]

@@ -1,72 +1,72 @@
 var maqam = [
   {
-    name: "Bayyati",
+    name: 'Bayyati',
     file: 'audio/bayyati_mg.m4a',
     pointValue: 5
   }, {
-    name: "Nahawand",
+    name: 'Nahawand',
     file: 'audio/nahawand_mg.m4a',
     pointValue: 5
   }, {
-    name:"Saba",
+    name:'Saba',
     file: 'audio/saba_mg.m4a',
     pointValue: 5
   }, {
-    name: "Huzam",
+    name: 'Huzam',
     file: 'audio/huzam_mg.m4a',
     pointValue: 5
   }, {
-    name: "Hijaz",
+    name: 'Hijaz',
     file: 'audio/hijaz_mg.m4a',
     pointValue: 5,
   }, {
-    name: "Ajam",
+    name: 'Ajam',
     file: 'audio/ajam_mg.m4a',
     pointValue: 5
   }, {
-    name: "Bastanikar",
+    name: 'Bastanikar',
     file: 'audio/bastanikar_mg.m4a',
     pointValue: 5
   }, {
-    name: "Nakriz",
+    name: 'Nakriz',
     file: 'audio/nakriz_mg.m4a',
     pointValue: 5,
   }, {
-    name: "Iraq",
+    name: 'Iraq',
     file: 'audio/iraq_mg.m4a',
     pointValue: 5
   }, {
-    name: "Suznak",
+    name: 'Suznak',
     file: 'audio/suznak_mg.m4a',
     pointValue: 5
   }, {
-    name: "Rast",
+    name: 'Rast',
     file: 'audio/rast_mg.m4a',
     pointValue: 5
   }, {
-    name: "Shawq Afza",
+    name: 'Shawq Afza',
     file: 'audio/shawq_afza_mg.m4a',
     pointValue: 5
   }, {
-    name: "Lami",
+    name: 'Lami',
     file: 'audio/lami_mg.m4a',
     pointValue: 5
   }, {
-    name: "Kurd",
+    name: 'Kurd',
     file: 'audio/kurd_mg.m4a',
     pointValue: 5
   }, {
-    name: "Ushaq Masri",
+    name: 'Ushaq Masri',
     file: 'audio/ushaq_masri_mg.m4a',
     pointValue: 5
   }, {
-    name: "Nawa Athar",
+    name: 'Nawa Athar',
     file: 'audio/nawa_athar_mg.m4a',
     pointValue: 5
   }
 ];
 
-var player = "Maqam Master";
+var player = 'Maqam Master';
 var attempt;
 var counter;
 var randomNumber;
@@ -98,29 +98,20 @@ $('#board').on('click', '.box', function(evt){
 function startGame() {
   counter = 0;
   attempt = 0;
-   $('#play').html("Play");
+   $('#play').html('Play');
    $('.box').removeClass('selected');
   render();
 };
 
-
-// sets a message when correct of incorrect
-// function setMessageWin() {
-// if(counter++) {
-//   $("#message").html("That's Correct!")
-// } else if (attempt++) {
-//   $("#message").html("Oops! Try Again");
-//  };
-// }
 // renders the score boared
 function render() {
   $('#attempts').html(attempt);
   $('#corscore').html(counter);
   if (attempt) $('#percent').html(Math.floor((counter/attempt) * 100) + '%');
   if(counter > 5) {
-    $("#message").html("Wow you're doing great!")
+    $('#message').html("Wow you're doing great!")
   } else if (counter > 10) {
-    $("#message").html("You are a " + player);
+    $('#message').html("You are a " + player);
   } else {
     $('#message').html("Let's go " + player);
   }
@@ -135,7 +126,7 @@ function generateNumber() {
 
 // plays the scale or maqam
 function play() {
-  if($('#play').html() === "Replay") {
+  if($('#play').html() === 'Replay') {
     $('#playScale').attr('src', maqam[randomNumber].file);
     $('#playScale')[0].play();
   } else {
@@ -143,7 +134,7 @@ function play() {
     //play audio
     $('#playScale').attr('src', maqam[randomNumber].file);
     $('#playScale')[0].play();
-    $('#play').toggleClass('.replay').html("Replay");
+    $('#play').toggleClass('.replay').html('Replay');
   }
 }
 
