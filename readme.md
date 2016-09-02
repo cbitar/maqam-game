@@ -29,7 +29,7 @@ technologies used:
  Unsolved Plans:
 
  1. Still working to create a visual element that animates the choosing process.
-
+ 2. Would like to create modals to pop up when hovering over each scale to describe the tetrachordal spelling.
  Spelling of the tetrachords of Maqamat:
 
 Bayyati: [Bayyati + Nahawand]
