@@ -2,6 +2,8 @@
 
 link : https://cbitar.github.io/maqam-game/
 
+trello link: https://trello.com/b/Zqu8HrSH/maqam-match
+
 Number of players: one
 Timer: none
 score count: yes
